@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elige tu avatar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="avatar-body">
+  <h1>Elige tu avatar</h1>
+  <div class="avatar-grid" id="avatar-grid"></div>
+  <button id="confirm-btn" disabled>Confirmar selección</button>
+
+  <script>
+    const avatars = Array.from({length:16}, (_,i)=>`assets/avatars/avatar${i+1}.png`);
+    const grid = document.getElementById("avatar-grid");
+    let selected = null;
+
+    avatars.forEach((src)=>{
+      const img = document.createElement("img");
+      img.src = src;
+      img.className = "avatar-option";
+      img.onclick = ()=>{
+        document.querySelectorAll(".avatar-option").forEach(a=>a.classList.remove("selected"));
+        img.classList.add("selected");
+        selected = src;
+        document.getElementById("confirm-btn").disabled = false;
+      };
+      grid.appendChild(img);
+    });
+
+    document.getElementById("confirm-btn").onclick = ()=>{
+      const user = JSON.parse(localStorage.getItem("rqUser"));
+      user.photo = selected;
+      localStorage.setItem("rqUser", JSON.stringify(user));
+      window.location.href = "index.html";
+    };
+  </script>
+</body>
+</html>
