@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reality Quest PRO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&libraries=places"></script>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div id="top-bar">
+    <input id="location-bar" type="text" readonly value="Cargando ubicación...">
+  </div>
+
+  <!-- Mapa -->
+  <div id="map"></div>
+
+  <!-- Panel inferior -->
+  <div id="bottom-panel">
+    <p id="mission-name">Tu ciudad es tu campo de batalla</p>
+    <div class="action-buttons">
+      <button id="startMission">🧭 Iniciar misión</button>
+      <button id="saveMission">💾 Guardar</button>
+      <button id="shareMission">🤝 Compartir</button>
+      <button id="detailsMission">🧩 Detalles</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
