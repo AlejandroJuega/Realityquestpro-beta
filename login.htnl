@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Reality Quest PRO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+  <div class="login-box">
+    <h1>Reality Quest PRO</h1>
+    <input type="email" id="email" placeholder="Correo electrónico">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button id="login-btn">Iniciar sesión</button>
+
+    <p id="register-link">¿No tienes cuenta? <span>Regístrate</span></p>
+    <div class="divider">o</div>
+
+    <a id="google-login"
+       href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?redirect_uri=https%3A%2F%2Frealityquest.vercel.app%2Foauth2callback&client_id=672396601026-n3h697j02ktdgbvtlhmo6q61qumtjigt.apps.googleusercontent.com&scope=openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&response_type=code&service=lso&o2v=2&flowName=GeneralOAuthFlow"
+       class="google-btn">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"> 
+       <span>Iniciar sesión con Google</span>
+    </a>
+  </div>
+
+  <!-- Registro -->
+  <div class="register-box hidden">
+    <h2>Crear cuenta</h2>
+    <input type="text" id="username" placeholder="Nombre de usuario">
+    <input type="email" id="reg-email" placeholder="Correo electrónico">
+    <input type="password" id="reg-pass" placeholder="Contraseña">
+    <input type="file" id="profile-pic" accept="image/*">
+    <button id="send-code-btn">Enviar código</button>
+
+    <div id="verify-section" class="hidden">
+      <input type="text" id="verify-code" placeholder="Código (7 dígitos)">
+      <button id="verify-btn">Verificar</button>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
